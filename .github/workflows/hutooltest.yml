@@ -29,11 +29,6 @@ jobs:
     - name: Move to the target folder
       run: cd hutool
 
-    - name: Git checkout
-      uses: actions/checkout@v2
-      with:
-       SHA: ec14f8384ad384fb6e054df722fe089d64af0c41
-
     - name: Compile the test
       run: mvn install -DskipTests -am -pl hutool-core
 
