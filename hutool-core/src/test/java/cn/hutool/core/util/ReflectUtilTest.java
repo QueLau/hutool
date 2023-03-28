@@ -13,7 +13,9 @@ import org.junit.Test;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -222,11 +224,11 @@ public class ReflectUtilTest {
 	public void getMethodsFromInterfaceTest() {
 		// 对于接口，直接调用Class.getMethods方法获取所有方法，因为接口都是public方法
 		// 因此此处得到包括TestInterface1、TestInterface2、TestInterface3中一共4个方法
-		final Method[] methods = ReflectUtil.getMethods(TestInterface3.class);
+		final Method[] methods = ReflectUtil.getMethods(TestInterface1.class);
 		Assert.assertEquals(4, methods.length);
 
 		// 接口里，调用getMethods和getPublicMethods效果相同
-		final Method[] publicMethods = ReflectUtil.getPublicMethods(TestInterface3.class);
+		final Method[] publicMethods = ReflectUtil.getPublicMethods(TestInterface1.class);
 		Assert.assertArrayEquals(methods, publicMethods);
 	}
 
