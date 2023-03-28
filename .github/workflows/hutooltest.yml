@@ -1,4 +1,4 @@
-name: flakytestnifi
+name: flakytesthutool
 
 on: [push,pull_request]
 
